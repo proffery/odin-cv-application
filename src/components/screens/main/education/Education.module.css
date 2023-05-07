@@ -1,0 +1,28 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--background-color-block);
+    padding: .5rem;
+    margin: .5rem;
+}
+
+.submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    margin: .5rem;
+    padding: .2rem;
+    border-radius: .2rem;
+    color: var(--background-color-block);
+    box-shadow: var(--shadow-line);
+    background-color: var(--background-color-main);
+    border: 0;
+    transition: all ease-in .1s;
+}
+
+.submit:hover {
+    box-shadow: none;
+}
