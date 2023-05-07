@@ -5,7 +5,7 @@ import uniqid from "uniqid"
 
 const Resume = () => {
     return <div className={styles.container}>
-        <h3>Summary:</h3>
+        <h3 className={styles.header}>Summary:</h3>
     </div>
 }
 

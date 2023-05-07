@@ -1,11 +1,20 @@
+.header {
+    filter: var(--drop-shadow);
+    color: var(--background-color-main);
+}
+
+
 .form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     background-color: var(--background-color-block);
+    border-radius: .5rem;
+    box-shadow: var(--shadow-window);
     padding: .5rem;
     margin: .5rem;
+    background: var(--gradient);
 }
 
 .submit {
@@ -29,7 +38,6 @@
 
 .textarea {
     display: flex;
-    min-height: 7rem ;
     resize: none;
     padding-left: .2rem;
     border-radius: .2rem;
@@ -38,6 +46,7 @@
  
 .textarea:focus {
     border: 1px solid blue;
+    box-shadow: var(--shadow-line);
 }
 
 .label {
@@ -48,6 +57,7 @@
 
 .group {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;

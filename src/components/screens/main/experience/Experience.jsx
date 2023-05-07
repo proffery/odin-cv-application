@@ -6,7 +6,7 @@ import uniqid from "uniqid"
 
 const Experience = () => {
     return <form className={styles.form}>
-        <h3>Experience:</h3>
+        <h3 className={styles.header}>Experience:</h3>
         <Input name={"Company name"} type={"text"} id={uniqid()}/>
         <Input name={"Position"} type={"text"} id={uniqid()}/>
         <Input name={"Date from"} type={"text"} id={uniqid()}/>

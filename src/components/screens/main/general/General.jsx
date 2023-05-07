@@ -6,7 +6,7 @@ import uniqid from "uniqid"
 
 const General = () => {
     return <form className={styles.form}>
-      <h3>General:</h3>
+      <h3 className={styles.header}>General:</h3>
       <div className={styles.group}>
         <div className={styles.left}>
           <Input name={"Name"} type={"text"} id={uniqid()}/>
@@ -15,9 +15,8 @@ const General = () => {
         </div>
         <div className={styles.right}>
           <label className={styles.label} htmlFor="textarea">About</label>
-          <textarea className={styles.textarea} id="textarea" cols={21} rows={8} placeholder="About"></textarea>
+          <textarea className={styles.textarea} id="textarea" cols={21} rows={3} placeholder="About"></textarea>
         </div>
-
       </div>
       <button className={styles.submit} type="submit">Submit</button>
     </form>

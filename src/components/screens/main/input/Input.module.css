@@ -18,4 +18,5 @@
 
 .input:focus {
     border: 1px solid blue;
+    box-shadow: var(--shadow-line);
 }

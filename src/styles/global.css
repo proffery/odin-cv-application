@@ -1,10 +1,12 @@
 :root {
     --main-font: clamp(16px, calc(16px + (28 - 16) * ((100vw - 360px) / 1560)), 28px);
     --font-color: rgb(0, 0, 0);
-    --background-color-main: rgb(34, 21, 82);
-    --background-color-block: rgb(255, 255, 255);
-    --shadow-window: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    --background-color-main: rgb(246, 243, 248);
+    --background-color-block: rgb(156, 76, 126);
+    --shadow-window: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
     --shadow-line: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    --drop-shadow: drop-shadow(-.1rem .1rem .05rem rgb(109, 105, 107));
+    --gradient: linear-gradient(90deg, rgba(36, 36, 44, 0.651) 0%, rgba(237, 237, 240, 0.329) 35%, rgba(36, 37, 37, 0.397) 100%);
 }
 
 * {
@@ -17,6 +19,8 @@
 body {
     background-color: var(--background-color-main);
     font-size: var(--main-font);
+    padding: .5rem;
+    background-image: url(../assets/background.svg);
 }
 
 body div#root {
@@ -26,3 +30,6 @@ body div#root {
     justify-content: center;
 }
 
+form {
+    min-height: 20rem;
+}

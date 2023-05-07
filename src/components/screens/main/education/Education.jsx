@@ -6,7 +6,7 @@ import uniqid from "uniqid"
 
 const Education = () => {
     return <form className={styles.form}>
-        <h3>Education:</h3>
+        <h3 className={styles.header}>Education:</h3>
         
         <Input name={"School name"} type={"text"} id={uniqid()}/>
         <Input name={"Title of study"} type={"text"} id={uniqid()}/>

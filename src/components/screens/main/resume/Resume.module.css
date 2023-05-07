@@ -4,11 +4,14 @@
     align-items: center;
     justify-content: space-between;
     background-color: var(--background-color-block);
+    box-shadow: var(--shadow-window);
     padding: .5rem;
     margin: .5rem;
     border-radius: .5rem;
-    min-width: 15rem;
-    width: 80vw;
-    min-height: 50rem;
+    background: var(--gradient);
+}
 
+.header {
+    filter: var(--drop-shadow);
+    color: var(--background-color-main);
 }
