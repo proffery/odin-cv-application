@@ -21,6 +21,10 @@ body {
     font-size: var(--main-font);
     padding: .5rem;
     background-image: url(../assets/background.svg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 body div#root {

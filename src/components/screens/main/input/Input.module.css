@@ -11,9 +11,12 @@
 
 .input {
     display: flex;
+    align-items: center;
+    justify-content: center;
     border: 1px solid black;
     border-radius: .2rem;
     padding-left: .2rem;
+    width: 10rem;
 }
 
 .input:focus {

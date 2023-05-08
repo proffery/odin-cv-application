@@ -34,3 +34,12 @@
 .submit:hover {
     box-shadow: none;
 }
+
+.buttons{
+    display: flex;
+    align-items: center;
+}
+
+button {
+    height: fit-content;
+}
