@@ -2,6 +2,7 @@
     display: grid;
     grid-template-rows: auto 1fr auto;
     grid-template-columns: 1fr;
+    gap: 1rem;
 }
 
 .header {
@@ -19,6 +20,7 @@
     text-shadow: -.1rem .1rem .3rem rgb(133, 129, 132);
     background: var(--gradient);
     text-align: center;
+    border: 1px solid var(--background-color-block);
 }
 
 .sections {
@@ -37,11 +39,26 @@
     
 }
 
+.gen{
+    transition: all ease-in .2s;
+    margin-right: 1rem;
+}
+
+.gen:hover {
+    transform: scale(1.1);
+}
+
 .edu {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    transition: all ease-in .2s;
+    margin-right: 1rem;
+}
+
+.edu:hover {
+    transform: scale(1.1);
 }
 
 .exp {
@@ -49,4 +66,22 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    transition: all ease-in .2s;
+    margin-right: 1rem;
+}
+
+.exp:hover {
+    transform: scale(1.1);
+}
+
+.adremovecont {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    border-top: 1px solid var(--background-color-block);
+    border-right: 1px solid var(--background-color-block);
+    border-bottom: 1px solid var(--background-color-block);
+    box-shadow: var(--shadow-window);
+    border-radius: 0 .5rem .5rem 0;
+    background: var(--gradient);
 }

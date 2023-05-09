@@ -1,9 +1,15 @@
 import React from "react"
 import styles from './Resume.module.css'
 
-const Resume = () => {
+const Resume = ({general}) => {
     return <div className={styles.container}>
-        <h3 className={styles.header}>Summary:</h3>
+        <h2 className={styles.header}>Summary:</h2>
+        <div className={styles.general}>
+            <div>Name: {general.name}</div>
+            <div>Email: {general.email}</div>
+            <div>Phone: {general.phone}</div>
+            <div>About: {general.about}</div>
+        </div>
     </div>
 }
 

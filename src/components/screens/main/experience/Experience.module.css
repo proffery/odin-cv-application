@@ -12,7 +12,7 @@
     border-radius: .5rem;
     box-shadow: var(--shadow-window);
     padding: .5rem;
-    margin: .5rem;
+    margin-left: .5rem;
     background: var(--gradient);
 }
 
@@ -24,9 +24,9 @@
     margin: .5rem;
     padding: .2rem;
     border-radius: .2rem;
-    color: var(--background-color-block);
+    color: var(--background-color-main);
     box-shadow: var(--shadow-line);
-    background-color: var(--background-color-main);
+    background-color: var(--background-color-block);
     border: 0;
     transition: all ease-in .1s;
 }
@@ -42,4 +42,13 @@
 
 button {
     height: fit-content;
+}
+
+.company, .position, .from, .until {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 11rem;
 }

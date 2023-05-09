@@ -22,12 +22,12 @@
     align-items: center;
     justify-content: center;
     width: 5rem;
-    margin: .5rem;
     padding: .2rem;
+    margin: .5rem;
     border-radius: .2rem;
-    color: var(--background-color-block);
+    color: var(--background-color-main);
     box-shadow: var(--shadow-line);
-    background-color: var(--background-color-main);
+    background-color: var(--background-color-block);
     border: 0;
     transition: all ease-in .1s;
 }
@@ -42,7 +42,7 @@
     padding-left: .2rem;
     border-radius: .2rem;
     border: 1px solid black;
-    width: 10rem;
+    width: 11rem;
 }
  
 .textarea:focus {

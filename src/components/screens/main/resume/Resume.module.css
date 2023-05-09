@@ -9,9 +9,15 @@
     margin: .5rem;
     border-radius: .5rem;
     background: var(--gradient);
+    color: var(--background-color-main);
 }
 
 .header {
     filter: var(--drop-shadow);
     color: var(--background-color-main);
+}
+
+.general {
+    display: flex;
+    flex-direction: column;
 }
