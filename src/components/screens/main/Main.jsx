@@ -15,7 +15,7 @@ const Main = () => {
   }
 
   const education = [{
-    id: 0,
+    id: '0',
     school: '',
     title: '',
     from: '',
@@ -23,7 +23,6 @@ const Main = () => {
   }]
 
   const experience = [{
-    id: 0,
     company: '',
     position: '',
     from: '',
@@ -35,7 +34,7 @@ const Main = () => {
   const [edu, setEdu] = useState(education)
   const addEdu = () => {
     setEdu(current => [...current, {
-      id: current.length,
+      id: edu.length.toString(),
       school: '',
       title: '',
       from: '',
@@ -48,7 +47,7 @@ const Main = () => {
     let array = [...edu]
     array.splice(array.length - 1, 1)
     setEdu(array)
-    console.log(edu)
+    console.log(array)
   }
 
   const [exp, setExp] = useState(experience)
@@ -71,6 +70,12 @@ const Main = () => {
     setGen(inputGenData)
   }
 
+  const onSaveEduHandler = (inputEduData) => {
+    setEdu((prevState) => [...prevState])
+
+    //setEdu(inputEduData)
+    console.log(inputEduData)
+  }
 
   return <div className={styles.container}>
     <h1 className={styles.header}>Project: CV Application</h1>
@@ -79,8 +84,8 @@ const Main = () => {
         <General prop={gen} onSaveGen={onSaveGenHandler}/>
       </div>
       <div className={styles.edu}>
-        {edu.map(edu =>
-          <Education key={uniqid()} school={edu.school} title={edu.title} from={edu.from} until={edu.until}/>
+        {edu.map(educ =>
+          <Education key={educ.id} prop={educ} onSaveEdu={onSaveEduHandler}/>
         )}
         <div className={styles.adremovecont}>
           {edu.length > 1 && <h1 className={styles.removeedu} onClick={removeEdu}>-</h1>}
@@ -98,7 +103,7 @@ const Main = () => {
       </div>
     </div>
     <div className={styles.resume}>
-      <Resume general={gen}/>
+      <Resume general={gen} education={edu}/>
     </div>
   </div>
 

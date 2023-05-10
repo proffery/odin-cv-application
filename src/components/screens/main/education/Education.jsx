@@ -2,14 +2,11 @@ import React from "react"
 import styles from './Education.module.css'
 import { useState } from "react"
 
-
 const Education = (prop) => {
-
     const [school, setSchool] = useState(prop.school)
     const [title, setTitle] = useState(prop.title)
     const [from, setFrom] = useState(prop.from)
     const [until, setUntil] = useState(prop.until)
-
     const schoolChange = (e) => {
         e.preventDefault()
         setSchool(e.target.value)
@@ -29,7 +26,21 @@ const Education = (prop) => {
         e.preventDefault()
         setUntil(e.target.value)
     }
-    return <form className={styles.form}>
+
+    const submitHandler = (e) => {
+        e.preventDefault()
+        const formData = {
+            id: prop.id,
+            school: school,
+            title: title,
+            from: from,
+            until: until
+        }
+        console.log(prop)
+        prop.onSaveEdu(formData)
+    }
+
+    return <form key={prop.id} className={styles.form}>
         <h3 className={styles.header}>Education:</h3>
         <div className={styles.school}>
             <label htmlFor="school-name" className={styles.label}>School:</label>
@@ -52,7 +63,7 @@ const Education = (prop) => {
         </div>
 
         <div className={styles.buttons}>
-            <button className={styles.submit} type="submit">Submit</button>
+            <button className={styles.submit} type="button" onClick={submitHandler}>Submit</button>
         </div>
     </form>
 }

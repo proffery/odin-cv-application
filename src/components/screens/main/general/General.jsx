@@ -36,6 +36,7 @@ const General = (prop) => {
                   phone: phone,
                   about: about
             }
+            console.log(formData)
             prop.onSaveGen(formData)
       }
 
