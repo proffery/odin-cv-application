@@ -26,21 +26,20 @@ const Education = (prop) => {
         e.preventDefault()
         setUntil(e.target.value)
     }
-
-    const submitHandler = (e) => {
+    
+    const submitEduHandler = (e) => {
         e.preventDefault()
         const formData = {
-            id: prop.id,
+            id: prop.prop.id,
             school: school,
             title: title,
             from: from,
             until: until
         }
-        console.log(prop)
         prop.onSaveEdu(formData)
     }
 
-    return <form key={prop.id} className={styles.form}>
+    return <form key={prop.prop.id} className={styles.form}>
         <h3 className={styles.header}>Education:</h3>
         <div className={styles.school}>
             <label htmlFor="school-name" className={styles.label}>School:</label>
@@ -63,7 +62,7 @@ const Education = (prop) => {
         </div>
 
         <div className={styles.buttons}>
-            <button className={styles.submit} type="button" onClick={submitHandler}>Submit</button>
+            <button className={styles.submit} type="button" onClick={submitEduHandler}>Submit</button>
         </div>
     </form>
 }

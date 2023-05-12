@@ -59,7 +59,7 @@ const General = (prop) => {
       </div>
       <div className={styles.about}>
         <label className={styles.label} htmlFor="textarea">About:</label>
-        <textarea className={styles.textarea} id="textarea" cols={21} rows={3} placeholder="About" value={about} onChange={aboutChange}></textarea>
+        <textarea className={styles.textarea} id="textarea" cols={21} rows={3} maxlength="50" placeholder="About" value={about} onChange={aboutChange}></textarea>
       </div>
       <button className={styles.submit} type="button" onClick={submitHandler}>Submit</button>
     </form>

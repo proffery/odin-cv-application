@@ -13,11 +13,9 @@
     border-radius: .5rem;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
     box-shadow: var(--shadow-window);
     padding: .5rem;
-    margin: .5rem;
-    text-shadow: -.1rem .1rem .3rem rgb(133, 129, 132);
+    margin: 1rem;
     background: var(--gradient);
     text-align: center;
     border: 1px solid var(--background-color-block);
@@ -40,12 +38,12 @@
 }
 
 .gen{
-    transition: all ease-in .2s;
+    transition: all ease-in .3s;
     margin-right: 1rem;
 }
 
 .gen:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .edu {
@@ -53,12 +51,12 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    transition: all ease-in .2s;
+    transition: all ease-in .3s;
     margin-right: 1rem;
 }
 
 .edu:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .exp {
@@ -66,16 +64,17 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    transition: all ease-in .2s;
+    transition: all ease-in .3s;
     margin-right: 1rem;
 }
 
 .exp:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .adremovecont {
     display: flex;
+    flex-wrap: nowrap;
     flex-direction: column-reverse;
     align-items: center;
     border-top: 1px solid var(--background-color-block);

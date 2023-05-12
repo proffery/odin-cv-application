@@ -4,29 +4,29 @@ import Education from "./education/Education.jsx";
 import Experience from "./experience/Experience.jsx";
 import Resume from "./resume/Resume.jsx";
 import styles from "./Main.module.css";
-import uniqid from "uniqid";
 
 const Main = () => {
   const general = {
-    name: '',
-    email: '',
-    phone: '',
-    about: ''
+    name: 'My Name',
+    email: 'email@email.email',
+    phone: '0123456789',
+    about: 'Some information'
   }
 
   const education = [{
     id: '0',
-    school: '',
-    title: '',
-    from: '',
-    until: ''
+    school: 'The Odin Project',
+    title: 'Student',
+    from: '2023-01-01',
+    until: '2024-01-01'
   }]
 
   const experience = [{
-    company: '',
-    position: '',
-    from: '',
-    until: ''
+    id: '0',
+    company: '-',
+    position: '-',
+    from: '-',
+    until: '-'
   }]
 
   const [gen, setGen] = useState(general)
@@ -40,7 +40,6 @@ const Main = () => {
       from: '',
       until: ''
     }])
-    console.log(edu)
   }
   
   const removeEdu = () => {
@@ -53,6 +52,7 @@ const Main = () => {
   const [exp, setExp] = useState(experience)
   const addExp = () => {
     setExp(current => [...current, {
+      id: exp.length.toString(),
       company: '',
       position: '',
       from: '',
@@ -65,17 +65,39 @@ const Main = () => {
     array.splice(array.length - 1, 1)
     setExp(array)
   }
-
   const onSaveGenHandler = (inputGenData) => {
     setGen(inputGenData)
   }
-
+  
   const onSaveEduHandler = (inputEduData) => {
-    setEdu((prevState) => [...prevState])
+    const newEdu = edu.map(obj => {
+      if(obj.id === inputEduData.id) {
+        return {...obj, 
+        school: inputEduData.school,
+        title: inputEduData.title,
+        from: inputEduData.from,
+        until: inputEduData.until }
+      }
+      return obj
+    })
 
-    //setEdu(inputEduData)
-    console.log(inputEduData)
-  }
+    setEdu(newEdu)
+  } 
+
+  const onSaveExpHandler = (inputExpData) => {
+    const newExp = exp.map(obj => {
+      if(obj.id === inputExpData.id) {
+        return {...obj, 
+        company: inputExpData.company,
+        position: inputExpData.position,
+        from: inputExpData.from,
+        until: inputExpData.until }
+      }
+      return obj
+    })
+    console.log(newExp)
+    setExp(newExp)
+  } 
 
   return <div className={styles.container}>
     <h1 className={styles.header}>Project: CV Application</h1>
@@ -93,8 +115,8 @@ const Main = () => {
         </div>
       </div>
       <div className={styles.exp}>
-        {exp.map(exp =>
-          <Experience key={uniqid()} name={exp.name} position={exp.position} from={exp.from} until={exp.until}/>
+        {exp.map(expr =>
+          <Experience key={expr.id} prop={expr} onSaveExp={onSaveExpHandler}/>
         )}
           <div className={styles.adremovecont}>
             {exp.length > 1 && <h1 className={styles.removeexp} onClick={removeExp}>-</h1>}
@@ -103,7 +125,7 @@ const Main = () => {
       </div>
     </div>
     <div className={styles.resume}>
-      <Resume general={gen} education={edu}/>
+      <Resume general={gen} education={edu} experience={exp}/>
     </div>
   </div>
 
