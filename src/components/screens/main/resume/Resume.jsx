@@ -2,7 +2,10 @@ import React from "react"
 import styles from './Resume.module.css'
 import uniqid from "uniqid"
 
+
 const Resume = ({general, education, experience}) => {
+    
+
     return <div className={styles.container}>
         <h2 className={styles.header}>Summary:</h2>
         <div className={styles.general}>

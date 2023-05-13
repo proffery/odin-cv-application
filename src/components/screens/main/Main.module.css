@@ -9,16 +9,13 @@
     display: flex;
     grid-row: 1 / 2;
     color: var(--background-color-main);
-    background-color: var(--background-color-block);
     border-radius: .5rem;
     align-items: center;
     justify-content: center;
-    box-shadow: var(--shadow-window);
     padding: .5rem;
     margin: 1rem;
-    background: var(--gradient);
     text-align: center;
-    border: 1px solid var(--background-color-block);
+    text-shadow: var(--shadow-line);
 }
 
 .sections {
