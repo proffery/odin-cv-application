@@ -2,6 +2,7 @@
   "name": "odin-cv-application",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://proffery.github.io/odin-cv-application",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -40,7 +41,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^5.0.0",
-    "homepage": "http://proffery.github.io/odin-cv-application"
+    "gh-pages": "^5.0.0"
   }
 }
