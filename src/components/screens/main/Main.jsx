@@ -23,10 +23,10 @@ const Main = () => {
 
   const experience = [{
     id: '0',
-    company: '-',
-    position: '-',
-    from: '-',
-    until: '-'
+    company: 'none',
+    position: 'none',
+    from: 'none',
+    until: 'none'
   }]
 
   const [gen, setGen] = useState(general)
@@ -99,35 +99,48 @@ const Main = () => {
     setExp(newExp)
   } 
 
-  return <div className={styles.container}>
-    <h1 className={styles.header}>Project: CV Application</h1>
-    <div className={styles.sections}>
-      <div className={styles.gen}>
-        <General prop={gen} onSaveGen={onSaveGenHandler}/>
-      </div>
-      <div className={styles.edu}>
-        {edu.map(educ =>
-          <Education key={educ.id} prop={educ} onSaveEdu={onSaveEduHandler}/>
-        )}
-        <div className={styles.adremovecont}>
-          {edu.length > 1 && <h1 className={styles.removeedu} onClick={removeEdu}>-</h1>}
-          <h1 className={styles.addedu} onClick={addEdu}>+</h1>
+  const printContent = () => {
+    let printContents = document.querySelector(`.${styles.resume}`).innerHTML
+    let originalContents = document.body.innerHTML
+    document.body.innerHTML = printContents
+    window.print()
+    document.body.innerHTML = originalContents
+  }
+
+  return(
+    <>
+      <div className={styles.container}>
+        <h1 className={styles.header}>Project: CV Application</h1>
+        
+        <div className={styles.section}>
+          <General prop={gen} onSaveGen={onSaveGenHandler}/>
         </div>
-      </div>
-      <div className={styles.exp}>
-        {exp.map(expr =>
-          <Experience key={expr.id} prop={expr} onSaveExp={onSaveExpHandler}/>
-        )}
-          <div className={styles.adremovecont}>
-            {exp.length > 1 && <h1 className={styles.removeexp} onClick={removeExp}>-</h1>}
-            <h1 className={styles.addexp} onClick={addExp}>+</h1>
+        <div className={styles.section}>
+          {edu.map(educ =>
+            <Education key={educ.id} prop={educ} onSaveEdu={onSaveEduHandler}/>
+          )}
+          <div className={styles.addRemoveCont}>
+            {edu.length > 1 && <div className={styles.addRemoveButton} onClick={removeEdu}>-</div>}
+            <div className={styles.addRemoveButton} onClick={addEdu}>+</div>
           </div>
+        </div>
+        <div className={styles.section}>
+          {exp.map(expr =>
+            <Experience key={expr.id} prop={expr} onSaveExp={onSaveExpHandler}/>
+          )}
+            <div className={styles.addRemoveCont}>
+              {exp.length > 1 && <div onClick={removeExp} className={styles.addRemoveButton}>-</div>}
+              <div onClick={addExp} className={styles.addRemoveButton}>+</div>
+            </div>
+        </div>
+
+        <div className={styles.resume}>
+          <Resume general={gen} education={edu} experience={exp}/>
+        </div>
+        <div className={styles.print} type="button" onClick={printContent}>Print CV</div>
       </div>
-    </div>
-    <div className={styles.resume}>
-      <Resume general={gen} education={edu} experience={exp}/>
-    </div>
-  </div>
+    </>
+  ) 
 
 }
 

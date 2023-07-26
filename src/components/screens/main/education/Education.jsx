@@ -41,27 +41,27 @@ const Education = (prop) => {
 
     return <form key={prop.prop.id} className={styles.form}>
         <h3 className={styles.header}>Education:</h3>
-        <div className={styles.school}>
+        <div className={styles.group}>
             <label htmlFor="school-name" className={styles.label}>School:</label>
             <input id="school-name" className={styles.input} type="text" placeholder="school name" value={school} onChange={schoolChange}></input>
         </div>
 
-        <div className={styles.title}>
+        <div className={styles.group}>
             <label htmlFor="title" className={styles.label}>Title:</label>
             <input id="title" className={styles.input} type="text" placeholder="title" value={title} onChange={titleChange}></input>
         </div>
 
-        <div className={styles.from}>
+        <div className={styles.group}>
             <label htmlFor="from" className={styles.label}>From:</label>
             <input id="from" className={styles.input} type="date" placeholder="from" value={from} onChange={fromChange}></input>
         </div>
 
-        <div className={styles.until}>
+        <div className={styles.group}>
             <label htmlFor="until" className={styles.label}>Until:</label>
             <input id="until" className={styles.input} type="date" placeholder="until" value={until} onChange={untilChange}></input>
         </div>
 
-        <div className={styles.buttons}>
+        <div className={styles.group}>
             <button className={styles.submit} type="button" onClick={submitEduHandler}>Submit</button>
         </div>
     </form>

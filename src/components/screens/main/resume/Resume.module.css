@@ -1,42 +1,23 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    background-color: var(--background-color-block);
-    box-shadow: var(--shadow-window);
-    padding: .5rem;
-    margin: .5rem;
-    border-radius: .5rem;
-    background: var(--gradient);
-    color: var(--background-color-main);
-    border: 1px solid var(--background-color-block);
-    transition: all ease-in 0.3s;
-}
-
-.container:hover {
-    transform: scale(1.05);
+    @apply flex-col bg-slate-200 p-5 text-gray-500
 }
 
 .header {
-    display: flex;
-    align-self: center;
-    filter: var(--drop-shadow);
-    color: var(--background-color-main);
+    @apply text-xl font-bold text-center text-gray-500
 }
 
-.general, .experience, .education {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-    padding: 1rem;
+.section {
+    @apply flex-col gap-4 flex-wrap mb-4 bg-slate-200
 }
 
-hr {
-    display: flex;
-    align-self: center;
-    justify-content: center;
-    width: 63vw;
-    margin-top: 1rem;
+.resume {
+    @apply bg-slate-200 shadow-md
+}
+
+.adremovecont {
+ @apply text-3xl flex
+}
+
+.headerLight {
+    @apply text-gray-500 font-semibold text-xl
 }

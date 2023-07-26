@@ -1,83 +1,27 @@
 .container {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    @apply flex-col bg-slate-500 p-5
 }
 
 .header {
-    display: flex;
-    grid-row: 1 / 2;
-    color: var(--background-color-main);
-    border-radius: .5rem;
-    align-items: center;
-    justify-content: center;
-    padding: .5rem;
-    margin: 1rem;
-    text-align: center;
-    text-shadow: var(--shadow-line);
+    @apply text-2xl font-bold text-center text-gray-300 mb-5
 }
 
-.sections {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    grid-row: 2 / 3;
-    color: var(--background-color-main);
+.section {
+    @apply flex gap-4 flex-wrap mb-4
 }
 
 .resume {
-    display: flex;
-    justify-content: center;
-    grid-row: 3 / 4; 
-    
+    @apply bg-slate-200 shadow-md
 }
 
-.gen{
-    transition: all ease-in .3s;
-    margin-right: 1rem;
+.addRemoveCont {
+ @apply flex flex-col-reverse align-middle justify-center font-bold text-center text-4xl
 }
 
-.gen:hover {
-    transform: scale(1.05);
+.addRemoveButton {
+    @apply flex align-middle justify-center text-gray-200 
 }
 
-.edu {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    transition: all ease-in .3s;
-    margin-right: 1rem;
-}
-
-.edu:hover {
-    transform: scale(1.05);
-}
-
-.exp {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    transition: all ease-in .3s;
-    margin-right: 1rem;
-}
-
-.exp:hover {
-    transform: scale(1.05);
-}
-
-.adremovecont {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column-reverse;
-    align-items: center;
-    border-top: 1px solid var(--background-color-block);
-    border-right: 1px solid var(--background-color-block);
-    border-bottom: 1px solid var(--background-color-block);
-    box-shadow: var(--shadow-window);
-    border-radius: 0 .5rem .5rem 0;
-    background: var(--gradient);
+.print {
+    @apply max-w-fit bg-slate-200 mt-4 px-4 text-gray-400 border border-solid border-gray-200 transition-colors hover:bg-slate-600 hover:text-gray-200
 }

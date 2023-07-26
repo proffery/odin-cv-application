@@ -45,23 +45,25 @@ const General = (prop) => {
 
     return <form className={styles.form}>
       <h3 className={styles.header}>General:</h3>
-      <div className={styles.name}>
+      <div className={styles.group}>
             <label htmlFor="name" className={styles.label}>Name:</label>
             <input id="name" className={styles.input} type="text" placeholder="name" value={name} onChange={nameChange}></input>
       </div>
-      <div className={styles.email}>
+      <div className={styles.group}>
             <label htmlFor="email" className={styles.label}>Email:</label>
             <input id="email" className={styles.input} type="email" placeholder="e-mail" value={email} onChange={emailChange}></input>
       </div>
-      <div className={styles.phone}>
+      <div className={styles.group}>
             <label htmlFor="phone" className={styles.label}>Phone:</label>
             <input id="phone" className={styles.input} type="text" placeholder="phone number" value={phone} onChange={phoneChange}></input>
       </div>
-      <div className={styles.about}>
-        <label className={styles.label} htmlFor="textarea">About:</label>
-        <textarea className={styles.textarea} id="textarea" cols={21} rows={3} maxlength="50" placeholder="About" value={about} onChange={aboutChange}></textarea>
+      <div className={styles.group}>
+            <label className={styles.label} htmlFor="textarea">About:</label>
+            <textarea className={styles.textarea} id="textarea" cols={21} rows={3} maxlength="50" placeholder="About" value={about} onChange={aboutChange}></textarea>
       </div>
-      <button className={styles.submit} type="button" onClick={submitHandler}>Submit</button>
+      <div className={styles.group}>
+            <button className={styles.submit} type="button" onClick={submitHandler}>Submit</button>
+      </div>
     </form>
 }
 
