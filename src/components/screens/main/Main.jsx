@@ -25,8 +25,8 @@ const Main = () => {
     id: '0',
     company: 'none',
     position: 'none',
-    from: 'none',
-    until: 'none'
+    from: '',
+    until: ''
   }]
 
   const [gen, setGen] = useState(general)
@@ -113,11 +113,11 @@ const Main = () => {
         <h1 className={styles.header}>Project: CV Application</h1>
         
         <div className={styles.section}>
-          <General prop={gen} onSaveGen={onSaveGenHandler}/>
+          <General general={gen} onSaveGen={onSaveGenHandler}/>
         </div>
         <div className={styles.section}>
           {edu.map(educ =>
-            <Education key={educ.id} prop={educ} onSaveEdu={onSaveEduHandler}/>
+            <Education key={educ.id} education={educ} onSaveEdu={onSaveEduHandler}/>
           )}
           <div className={styles.addRemoveCont}>
             {edu.length > 1 && <div className={styles.addRemoveButton} onClick={removeEdu}>-</div>}
@@ -126,7 +126,7 @@ const Main = () => {
         </div>
         <div className={styles.section}>
           {exp.map(expr =>
-            <Experience key={expr.id} prop={expr} onSaveExp={onSaveExpHandler}/>
+            <Experience key={expr.id} experience={expr} onSaveExp={onSaveExpHandler}/>
           )}
             <div className={styles.addRemoveCont}>
               {exp.length > 1 && <div onClick={removeExp} className={styles.addRemoveButton}>-</div>}

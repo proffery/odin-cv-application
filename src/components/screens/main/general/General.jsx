@@ -1,13 +1,23 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import styles from './General.module.css'
 
 
-const General = (prop) => {
-      const [name, setName] = useState(prop.name)
-      const [email, setEmail] = useState(prop.email)
-      const [phone, setPhone] = useState(prop.phone)
-      const [about, setAbout] = useState(prop.about)
+const General = ({general, onSaveGen}) => {
+      const [name, setName] = useState(general.name)
+      const [email, setEmail] = useState(general.email)
+      const [phone, setPhone] = useState(general.phone)
+      const [about, setAbout] = useState(general.about)
       
+      useEffect(() => {
+            const formData = {
+                  name: name,
+                  email: email,
+                  phone: phone,
+                  about: about
+            }
+           onSaveGen(formData)
+      }, [name, email, phone, about, general.id])
+
       const nameChange = (e) => {
             e.preventDefault()
             setName(e.target.value)
@@ -26,22 +36,7 @@ const General = (prop) => {
       const aboutChange = (e) => {
             e.preventDefault()
             setAbout(e.target.value)
-      }
-      
-      const submitHandler = (e) => {
-            e.preventDefault()
-            const formData = {
-                  name: name,
-                  email: email,
-                  phone: phone,
-                  about: about
-            }
-            console.log(formData)
-            prop.onSaveGen(formData)
-      }
-
-            
-      
+      }   
 
     return <form className={styles.form}>
       <h3 className={styles.header}>General:</h3>
@@ -59,10 +54,7 @@ const General = (prop) => {
       </div>
       <div className={styles.group}>
             <label className={styles.label} htmlFor="textarea">About:</label>
-            <textarea className={styles.textarea} id="textarea" cols={21} rows={3} maxlength="50" placeholder="About" value={about} onChange={aboutChange}></textarea>
-      </div>
-      <div className={styles.group}>
-            <button className={styles.submit} type="button" onClick={submitHandler}>Submit</button>
+            <textarea className={styles.textarea} id="textarea" cols={21} rows={3} maxLength="50" placeholder="About" value={about} onChange={aboutChange}></textarea>
       </div>
     </form>
 }

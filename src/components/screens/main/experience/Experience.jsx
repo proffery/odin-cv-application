@@ -1,12 +1,23 @@
-import React from "react"
+import React, { useEffect } from "react"
 import styles from './Experience.module.css'
 import { useState } from "react"
 
-const Experience = (prop) => {
-    const [company, setCompany] = useState(prop.company)
-    const [position, setPosition] = useState(prop.position)
-    const [from, setFrom] = useState(prop.from)
-    const [until, setUntil] = useState(prop.until)
+const Experience = ({experience, onSaveExp}) => {
+    const [company, setCompany] = useState(experience.company)
+    const [position, setPosition] = useState(experience.position)
+    const [from, setFrom] = useState(experience.from)
+    const [until, setUntil] = useState(experience.until)
+
+    useEffect(() => {
+        const formData = {
+            id: experience.id,
+            company: company,
+            position: position,
+            from: from,
+            until: until
+        }
+        onSaveExp(formData)
+    }, [company, position, from, until])
 
     const companyChange = (e) => {
         e.preventDefault()
@@ -28,18 +39,7 @@ const Experience = (prop) => {
         setUntil(e.target.value)
     }
 
-    const submitExpHandler = (e) => {
-        e.preventDefault()
-        const formData = {
-            id: prop.prop.id,
-            company: company,
-            position: position,
-            from: from,
-            until: until
-        }
-        prop.onSaveExp(formData)
-    }
-    return <form key={prop.prop.id} className={styles.form}>
+    return <form key={experience.id} className={styles.form}>
         <h3 className={styles.header}>Experience:</h3>
         <div className={styles.group}>
             <label htmlFor="company-name" className={styles.label}>Company:</label>
@@ -59,10 +59,6 @@ const Experience = (prop) => {
         <div className={styles.group}>
             <label htmlFor="until" className={styles.label}>Until:</label>
             <input id="until" className={styles.input} type="date" placeholder="until" value={until} onChange={untilChange}></input>
-        </div>
-        
-        <div className={styles.group}>
-            <button className={styles.submit} type="button" onClick={submitExpHandler}>Submit</button>
         </div>
     </form>
 }

@@ -1,12 +1,23 @@
-import React from "react"
 import styles from './Education.module.css'
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
-const Education = (prop) => {
-    const [school, setSchool] = useState(prop.school)
-    const [title, setTitle] = useState(prop.title)
-    const [from, setFrom] = useState(prop.from)
-    const [until, setUntil] = useState(prop.until)
+const Education = ({education, onSaveEdu}) => {
+    const [school, setSchool] = useState(education.school)
+    const [title, setTitle] = useState(education.title)
+    const [from, setFrom] = useState(education.from)
+    const [until, setUntil] = useState(education.until)
+    
+    useEffect(() => {
+        const formData = {
+            id: education.id,
+            school: school,
+            title: title,
+            from: from,
+            until: until
+        }
+        onSaveEdu(formData)
+    }, [school, title, from, until, education.id])
+    
     const schoolChange = (e) => {
         e.preventDefault()
         setSchool(e.target.value)
@@ -26,20 +37,8 @@ const Education = (prop) => {
         e.preventDefault()
         setUntil(e.target.value)
     }
-    
-    const submitEduHandler = (e) => {
-        e.preventDefault()
-        const formData = {
-            id: prop.prop.id,
-            school: school,
-            title: title,
-            from: from,
-            until: until
-        }
-        prop.onSaveEdu(formData)
-    }
 
-    return <form key={prop.prop.id} className={styles.form}>
+    return <form key={{education}.id} className={styles.form}>
         <h3 className={styles.header}>Education:</h3>
         <div className={styles.group}>
             <label htmlFor="school-name" className={styles.label}>School:</label>
@@ -59,10 +58,6 @@ const Education = (prop) => {
         <div className={styles.group}>
             <label htmlFor="until" className={styles.label}>Until:</label>
             <input id="until" className={styles.input} type="date" placeholder="until" value={until} onChange={untilChange}></input>
-        </div>
-
-        <div className={styles.group}>
-            <button className={styles.submit} type="button" onClick={submitEduHandler}>Submit</button>
         </div>
     </form>
 }
